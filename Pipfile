@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+redis = "*"
+rq = "*"
+flask = "*"
+docker = "*"
+mpyc-custom = "==0.10.7"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

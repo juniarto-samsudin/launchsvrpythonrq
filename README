@@ -1,0 +1,11 @@
+a. Start RQ Worker: python worker.py
+b. Enqueue a Task: python enqueue_task.py
+c. access the server: curl http://128.0.0.1:5000
+
+PS: needs redis to be running first.
+
+#Build worker docker image
+docker build -f Dockerfile.worker -t pythonrqworker:latest .
+
+#launching worker and redis in the same network
+docker compose up
