@@ -8,7 +8,7 @@ redis = "*"
 rq = "*"
 flask = "*"
 docker = "*"
-mpyc-custom = "==0.10.7"
+mpyc-custom = "==0.10.10"
 
 [dev-packages]
 

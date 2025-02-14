@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redislabs/rejson:latest
+    container_name: mpc-redisjson
+    ports:
+      - "6380:6379"
+    volumes:
+      - rejson_data:/data
+    networks:
+      - pythonrq-network
+  mpc-worker-1:
+    image: pythonrqworker:latest
+    container_name: mpc-worker-1
+    ports:
+      - "8000:5000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/app
+    depends_on:
+      - redis
+    networks:
+      - pythonrq-network
+
+volumes:
+  rejson_data:
+
+networks:
+  pythonrq-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.21.0/24
+          gateway: 192.168.21.1

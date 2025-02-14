@@ -17,9 +17,9 @@ RUN pipenv install --system --deploy
 
 # Copy worker.py to the container
 COPY worker.py /app/
-COPY tasks2.py /app/
-COPY tasks3.py /app/
-COPY tasksmpyc.py /app/
+#COPY tasks2.py /app/
+#COPY tasks3.py /app/
+#COPY tasksmpyc.py /app/
 
 EXPOSE 5000
 

@@ -10,7 +10,35 @@ def launch_server(pid):
     """
     print(f"Launching server on {pid}")
 
-    mpc = setup2(pid)
+
+    sessionInfo = {
+        "pid": pid,
+        "numOfParties": 3,
+        "partiesInfo": {
+            0: {
+                "host": "juniarto",
+                "port": 8000
+            },
+            1: {
+                "host": "renuga",
+                "port": 8000
+            },
+            2: {
+                "host": "neeson",
+                "port": 8000
+        }},
+        "options": {
+            "no_prss": False,
+            "no_log": True,
+            "sec_param": 30,
+            "no_async": False,
+            "ssl": False,
+        },
+        "mode": "multihost-docker" # onehost, multihost, multihost-docker
+        }
+
+
+    mpc = setup2(sessionInfo)
 
 
     async def main():
