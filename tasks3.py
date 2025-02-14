@@ -15,15 +15,18 @@ def launch_server(ip, port):
     with open("/etc/hostname", "r") as f:
         container_id = f.read().strip()
     print(f"Container ID: {container_id}")
+    #Container ID: 794b4a6ee926
 
     container = client.containers.get(container_id)
     port_mappings = container.attrs['NetworkSettings']['Ports']
     print("Port mappings: {} ".format(port_mappings))
+    #Port mappings: {'5000/tcp': [{'HostIp': '0.0.0.0', 'HostPort': '7001'}, {'HostIp': '::', 'HostPort': '7001'}]}
 
 
     internal_port = '5000/tcp'
     if internal_port in port_mappings and port_mappings[internal_port]:
         print (port_mappings[internal_port][0]["HostPort"])
+        #7001
 
     from flask import Flask
 

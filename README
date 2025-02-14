@@ -8,4 +8,16 @@ PS: needs redis to be running first.
 docker build -f Dockerfile.worker -t pythonrqworker:latest .
 
 #launching worker and redis in the same network
-docker compose up
+docker composse up  
+
+TO RUN FLASK IN WORKER CONTAINER
+1.  docker compose -f docker-compose2.yml up -d
+2. python enqueue_task.py
+3. curl http://localhost:[7000 or 7001 or 7002]
+
+DIRECTORY [tests] that consist of test-setup2-0.py, test-setup2-1.py, test-setup2-2.py
+all tests are without dockers. It tests setup2() function in MODIFIED mpyc library.
+
+
+
+
