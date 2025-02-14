@@ -1,5 +1,9 @@
 # INSTRUCTIONS 
 
+Multihost Docker means we are using three hosts ["juniarto", "renuga", "neeson].
+Each of the host will have to executes the following instructions below.
+
+### On Each Host
 1. Deploy all necessary dockers: 
 
     __*docker compose -f docker-compose3.yml up -d*__
