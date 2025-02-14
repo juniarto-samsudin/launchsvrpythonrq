@@ -1,7 +1,7 @@
 from redis import Redis
 from rq import Queue
 #from tasks import launch_server
-from tasks3 import launch_server
+from tasks3 import launch_server #RUN A FLASK SERVER IN ONE OF THE WORKER CONTAINERS
 #from tasksmpyc import launch_server
 import time
 
